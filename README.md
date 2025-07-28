@@ -1,27 +1,33 @@
-# React + TypeScript + Vite
+# 🚀 Cripto Cotizador
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Cripto Cotizador Demo](./screenshot.png)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Descripción
 
-## Expanding the ESLint configuration
+**Cripto Cotizador** es una aplicación **frontend** moderna que te permite consultar el precio de las principales criptomonedas en distintas monedas fiduciarias.  
+Este proyecto se realizó como **muestra para mi portafolio**, demostrando mis habilidades en diseño neumórfico y desarrollo con React/TypeScript.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- 🎨 **Diseño Modern Neumorphic**: formulario “hundido” e inputs “elevados”.  
+- 🌈 **Fondo dinámico** con ligero filtro hue-rotate que da vida al background.  
+- ⚡ **Fetch en tiempo real** desde la [API de CoinGecko](https://www.coingecko.com/).  
+- 🧑🏻‍💻 Construida con **Vite + React + TypeScript** y gestión de estado con **Zustand**.
 
-- Configure the top-level `parserOptions` property like this:
+---
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## 🛠 Tecnologías
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+| 🌐 Frontend  | 📦 Bundler    | 🚀 Estado    | 🎨 Estilos          |
+| ------------ | ------------ | ------------ | ------------------- |
+| React        | Vite         | Zustand      | CSS3 (Neumorphic)   |
+| TypeScript   | –            | –            | Google Fonts: Outfit |
+
+---
+
+## 🚀 Instalación y ejecución
+
+1. **Clona el repositorio**  
+   ```bash
+   git clone https://github.com/tu-usuario/cripto-cotizador.git
+   cd cripto-cotizador

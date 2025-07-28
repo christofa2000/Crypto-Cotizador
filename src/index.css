@@ -2,35 +2,61 @@
   --white: #FFF;
   --primary: #61ECBC;
   --black: #182339;
+
+  /* Variables Neumorphic */
+  --neo-bg: #ecf0f3;
+  --neo-shadow-dark: rgba(0, 0, 0, 0.1);
+  --neo-shadow-light: rgba(255, 255, 255, 0.7);
 }
+
 html {
   font-size: 62.5%;
 }
+
 body {
-  background-image: url('/bg.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* Fondo dinámico ya definido antes */
+  position: relative;
   min-height: 100vh;
   font-family: 'Outfit', sans-serif;
   font-size: 2rem;
 }
+
+/* Pseudo-elemento para la foto + filtro animado */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('/bg2.png') center/cover no-repeat;
+  filter: hue-rotate(0deg) brightness(0.9);
+  animation: hueShift 30s infinite linear;
+  z-index: -1;
+}
+
+@keyframes hueShift {
+  from { filter: hue-rotate(0deg)   brightness(0.9); }
+  to   { filter: hue-rotate(360deg) brightness(0.9); }
+}
+
 .container {
   max-width: 60rem;
   width: 95%;
   margin: 0 auto;
 }
+
 .app-title {
   font-size: 3.8rem;
   margin-top: 5rem;
   color: var(--white);
   line-height: .8;
 }
+
 .app-title span {
   display: block;
   color: var(--primary);
   font-size: 4.4rem;
 }
+
 .content {
   margin-top: 5rem;
   padding: 6rem 2rem;
@@ -39,56 +65,94 @@ body {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
-.form,
-.field {
+/* ─── Modern Neumorphic Form ───────────────────────────────────────────────── */
+
+.form {
+  background: var(--neo-bg);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow:
+    8px 8px 16px var(--neo-shadow-dark),
+   -8px -8px 16px var(--neo-shadow-light);
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .form label {
   color: var(--black);
+  font-weight: 500;
 }
+
+/* Select hundido */
 .form select {
-  background-color: #ECEBEB;
+  background: var(--neo-bg);
   border: none;
+  border-radius: .75rem;
+  box-shadow:
+    inset 4px 4px 8px var(--neo-shadow-dark),
+   inset -4px -4px 8px var(--neo-shadow-light);
   padding: 1rem;
-  border-radius: 1rem;
   font-size: 1.8rem;
+  outline: none;
 }
+
+/* Botón elevado */
 .form [type="submit"] {
-  background-color: var(--primary);
-  color: var(--black);
+  background: var(--neo-bg);
   border: none;
+  border-radius: .75rem;
+  box-shadow:
+    4px 4px 8px var(--neo-shadow-dark),
+   -4px -4px 8px var(--neo-shadow-light);
   padding: 1rem;
+  font-size: 1.8rem;
   font-weight: 900;
   cursor: pointer;
   text-transform: uppercase;
-  margin-top: 2rem;
-  transition: background-color 300ms ease;
+  transition: box-shadow 200ms ease;
+  margin-top: 1rem;
 }
-.form [type="submit"]:hover {
-  background-color: #0CB387;
+
+/* Efecto “presionar” */
+.form [type="submit"]:active {
+  box-shadow:
+    inset 4px 4px 8px var(--neo-shadow-dark),
+    inset -4px -4px 8px var(--neo-shadow-light);
 }
+
+/* ───────────────────────────────────────────────────────────────────────────── */
 
 .result-wrapper {
   margin-top: 5rem;
 }
+
 .result-wrapper h2 {
   text-align: center;
 }
+
 .result {
   display: grid;
   grid-template-columns: 1fr 3fr;
   align-items: center;
   gap: 1rem;
 }
+
 .result img {
   width: 100%;
 }
+
 .result p {
   margin: 0 0 1rem;
   font-size: 1.6rem;
 }
+
 .result span {
   font-weight: 700;
 }
