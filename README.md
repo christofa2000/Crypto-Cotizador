@@ -29,5 +29,5 @@ Este proyecto se realizó como **muestra para mi portafolio**, demostrando mis h
 
 1. **Clona el repositorio**  
    ```bash
-   git clone https://github.com/tu-usuario/cripto-cotizador.git
+   git clone https://github.com/christofa2000/Crypto-Cotizador.git
    cd cripto-cotizador
