@@ -1,6 +1,6 @@
 # 🚀 Cripto Cotizador
 
-![Cripto Cotizador Demo](public/screenshot.png)
+![Cripto Cotizador Demo](public/screenshot2.png)
 
 
 ---
